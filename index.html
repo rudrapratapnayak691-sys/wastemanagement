@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORBITAL RECOVERY DECK — Space Habitat Waste Management</title>
+  <meta name="description" content="An interactive educational facility tour of waste collection, sorting, processing, storage, water recovery, and future resource recovery in space habitats." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Saira+Condensed:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#tour">Skip to facility tour</a>
+
+  <!-- Cinematic opening -->
+  <header id="intro" class="intro" aria-label="Cinematic opening: spacecraft waste-processing bay">
+    <div class="intro-scene" aria-hidden="true">
+      <div class="starfield"></div>
+      <div class="orbit-ring"></div>
+      <div class="bay-frame"></div>
+      <div class="machinery machinery-a"></div>
+      <div class="machinery machinery-b"></div>
+      <div class="conveyor"></div>
+      <div class="particles"></div>
+      <div class="scanline"></div>
+      <div class="hazard-band"></div>
+    </div>
+
+    <div class="intro-content">
+      <p class="eyebrow">Salvage Operations · Orbital Habitat 07</p>
+      <h1 class="title">
+        <span>ORBITAL</span>
+        <span>RECOVERY</span>
+        <span>DECK</span>
+      </h1>
+      <p class="lede">
+        A guided tour through the engineered systems that collect, sort, treat, store, and recover
+        waste aboard spacecraft and future planetary habitats.
+      </p>
+      <button id="enterDeck" class="cta" type="button">
+        ENTER THE RECOVERY DECK
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </button>
+      <p class="intro-note">Educational simulation · No live spacecraft telemetry</p>
+    </div>
+  </header>
+
+  <nav class="topbar" aria-label="Facility navigation">
+    <a class="brand" href="#intro">ORD<span>/</span>RECOVERY</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+      MENU
+    </button>
+    <ul id="navLinks" class="nav-links">
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#sorting">Sorting</a></li>
+      <li><a href="#processing">Processing</a></li>
+      <li><a href="#storage">Storage</a></li>
+      <li><a href="#recovery">Recovery</a></li>
+      <li><a href="#flowmap">Flow Map</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#operations">Operations</a></li>
+      <li><a href="#environments">Environments</a></li>
+      <li><a href="#future">Future</a></li>
+    </ul>
+  </nav>
+
+  <main id="tour">
+    <!-- Collection -->
+    <section id="collection" class="panel" data-stage="collection">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">ZONE 01</span>
+          <h2>Collection</h2>
+          <p class="zone-status"><span class="lamp green"></span> Intake active</p>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>Where waste begins</h3>
+            <p>
+              Waste management starts at the point of use: food wrappers, hygiene supplies, maintenance
+              materials, packaging, and wastewater from daily crew activities. In microgravity, air
+              currents and sealed containers help keep loose debris from drifting through the cabin.
+            </p>
+            <p>
+              Crews separate materials where practical, seal them in bags or containers, and route them
+              to designated stowage or processing equipment. Good labeling and inventory tracking prevent
+              mix-ups and make later recovery easier.
+            </p>
+          </article>
+
+          <article class="card component-card" data-component="collection-vents" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-head">
+              <h3>Collection interfaces</h3>
+              <span class="lamp amber"></span>
+            </div>
+            <ul class="spec-list">
+              <li><strong>Waste bags:</strong> Contain dry trash and reduce odor exposure.</li>
+              <li><strong>Liquid lines:</strong> Route urine and other wastewater to treatment systems.</li>
+              <li><strong>Condensate collection:</strong> Captures humidity from cabin air.</li>
+              <li><strong>Compaction:</strong> Reduces the volume occupied by packaging and dry trash.</li>
+            </ul>
+            <p class="component-detail" hidden>
+              Collection is not just “throwing things away.” It protects cabin air quality, prevents
+              contamination, preserves materials that may contain recoverable water, and keeps hazardous
+              items separate from ordinary trash.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sorting -->
+    <section id="sorting" class="panel" data-stage="sorting">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">ZONE 02</span>
+          <h2>Sorting</h2>
+          <p class="zone-status"><span class="lamp green"></span> Material routing nominal</p>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>Separate, label, track</h3>
+            <p>
+              Sorting determines whether an item can be recycled, treated, compacted for storage,
+              returned to Earth, disposed of overboard, or saved for a future processing technology.
+              A spacecraft cannot rely on the enormous landfills and industrial recycling networks
+              available on Earth.
+            </p>
+            <p>
+              Categories may include dry trash, wet trash, packaging, metals, plastics, hygiene waste,
+              electronic waste, and hazardous materials. The goal is to keep recoverable resources
+              available while preventing biological, chemical, or fire hazards.
+            </p>
+          </article>
+
+          <article class="card sorter-card">
+            <h3>Material routing</h3>
+            <div class="sorter" aria-label="Illustrative material sorting diagram">
+              <div class="sorter-input">Mixed waste</div>
+              <div class="sorter-lanes">
+                <button class="lane" data-lane="reuse"><span></span>Reuse / recycle</button>
+                <button class="lane" data-lane="treat"><span></span>Treat</button>
+                <button class="lane" data-lane="store"><span></span>Store / compact</button>
+                <button class="lane" data-lane="discard"><span></span>Discard</button>
+              </div>
+              <p id="laneOutput" class="lane-output" role="status">
+                Select a route to see examples and trade-offs.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processing -->
+    <section id="processing" class="panel" data-stage="processing">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">ZONE 03</span>
+          <h2>Processing</h2>
+          <p class="zone-status"><span class="lamp amber"></span> Thermal loop cycling</p>
+        </div>
+
+        <div class="grid three">
+          <article class="card component-card" data-component="water-processor" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-head">
+              <h3>Water Processor</h3>
+              <span class="lamp green"></span>
+            </div>
+            <p>
+              The International Space Station’s Water Recovery System collects wastewater—including urine
+              and cabin humidity condensate—and sends it to the Water Processor Assembly for purification.
+            </p>
+            <p class="component-detail" hidden>
+              Treatment can include filtration, multifiltration beds, catalytic oxidation, ion exchange,
+              and disinfection. NASA reports that the station system can recover and recycle about 90% of
+              the water on station; with the Brine Processor Assembly demonstration, NASA has reported
+              reaching a 98% total water-recovery goal.
+            </p>
+          </article>
+
+          <article class="card component-card" data-component="trash-compactor" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-head">
+              <h3>Trash Compaction</h3>
+              <span class="lamp amber"></span>
+            </div>
+            <p>
+              Compaction reduces the volume of dry waste and packaging. NASA’s Trash Compaction and
+              Processing System concept uses pressure and heat to remove water from trash while recovering
+              that water and treating gas byproducts.
+            </p>
+            <p class="component-detail" hidden>
+              NASA describes TCPS as a technology development effort. Its projected benefits include
+              recovered habitable volume, water recovered from trash, and material that could potentially
+              be used for radiation shielding, but those projections should not be treated as routine
+              operational results.
+            </p>
+          </article>
+
+          <article class="card component-card" data-component="sanitation" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-head">
+              <h3>Sanitation</h3>
+              <span class="lamp green"></span>
+            </div>
+            <p>
+              Hygiene waste, food residue, and wet materials can support microbial growth if left
+              unmanaged. Sealed containment, drying or stabilization where appropriate, surface cleaning,
+              and air filtration all help limit contamination.
+            </p>
+            <p class="component-detail" hidden>
+              On the ISS, trash is generally packed into resupply vehicles that either return to Earth or
+              burn up during atmospheric reentry. Future deep-space missions will need more on-board
+              stabilization and resource recovery because regular returns or disposal opportunities may
+              not exist.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storage -->
+    <section id="storage" class="panel" data-stage="storage">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">ZONE 04</span>
+          <h2>Storage</h2>
+          <p class="zone-status"><span class="lamp amber"></span> Capacity monitoring</p>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>Every cubic meter matters</h3>
+            <p>
+              Stowage is a scarce resource aboard a spacecraft. Waste must be contained without blocking
+              emergency paths, damaging equipment, creating odor, or adding unnecessary mass in the wrong
+              location.
+            </p>
+            <p>
+              Crews track filled containers, compact materials when possible, and schedule transfers to
+              cargo vehicles. On long-duration missions, storage planning becomes part of mission design:
+              the facility must know not only how much waste exists, but what it contains and what could
+              still be recovered from it.
+            </p>
+          </article>
+
+          <article class="card storage-card">
+            <h3>Storage priorities</h3>
+            <ul class="check-list">
+              <li><span class="lamp green"></span> Keep emergency routes and equipment access clear.</li>
+              <li><span class="lamp green"></span> Contain odors, liquids, and microbial growth.</li>
+              <li><span class="lamp amber"></span> Separate hazardous or reactive materials.</li>
+              <li><span class="lamp amber"></span> Preserve recoverable water and useful materials.</li>
+              <li><span class="lamp red"></span> Avoid allowing waste volume to displace crew supplies.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource recovery -->
+    <section id="recovery" class="panel" data-stage="recovery">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">ZONE 05</span>
+          <h2>Resource Recovery</h2>
+          <p class="zone-status"><span class="lamp green"></span> Recovery systems online</p>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>Water: the highest-value loop</h3>
+            <p>
+              Water is one of the most important resources to recycle because launching it is expensive.
+              A spacecraft can collect humidity condensate, urine, and other wastewater, then purify it
+              for reuse.
+            </p>
+            <p>
+              NASA’s Environmental Control and Life Support System uses a Water Recovery System for this
+              purpose. The agency reports that the station’s system recycles about 90% of water on
+              station, and that the Brine Processor Assembly demonstration helped reach the 98% total
+              water-recovery goal. [1][6]
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Inventory reduces resupply</h3>
+            <p>
+              Recycling works best when crews know what they have. Tracking packaging, spare parts,
+              tools, consumables, and waste streams lets a habitat reuse materials instead of launching
+              replacements.
+            </p>
+            <p>
+              Careful inventory can also identify items that should be redesigned: less packaging,
+              reusable containers, standardized parts, and materials that are easier to process all
+              reduce the amount of waste a mission must manage.
+            </p>
+          </article>
+        </div>
+
+        <div class="reality-check">
+          <h3>Operating systems vs. future concepts</h3>
+          <div class="grid two">
+            <div>
+              <h4><span class="lamp green"></span> Demonstrated or operating</h4>
+              <ul>
+                <li>ISS wastewater collection and purification.</li>
+                <li>Water recovery from urine and cabin humidity condensate.</li>
+                <li>Trash packing and transfer aboard resupply vehicles.</li>
+                <li>Brine Processor Assembly demonstration for higher water recovery.</li>
+              </ul>
+            </div>
+            <div>
+              <h4><span class="lamp amber"></span> Research / proposed</h4>
+              <ul>
+                <li>Large-scale conversion of trash into construction or shielding materials.</li>
+                <li>Bioregenerative wastewater treatment for exploration habitats.</li>
+                <li>Thermochemical conversion of mixed waste into useful feedstocks.</li>
+                <li>In-space manufacturing using recycled materials.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="small-note">
+            NASA identifies trash compaction, thermochemical conversion, bioregenerative wastewater
+            management, waste stabilization, and in-space manufacturing from recycled materials as
+            active waste-management technology areas; several remain research or development efforts
+            rather than mature operational systems. [3]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow map -->
+    <section id="flowmap" class="panel flowmap-panel" data-stage="flowmap">
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">SYSTEM MAP</span>
+          <h2>Waste-Flow Map</h2>
+          <p class="zone-status"><span class="lamp green"></span> Select a stream</p>
+        </div>
+
+        <div class="flow-controls" role="tablist" aria-label="Waste streams">
+          <button class="flow-tab is-active" data-stream="solid" role="tab" aria-selected="true">Solid Waste</button>
+          <button class="flow-tab" data-stream="water" role="tab" aria-selected="false">Wastewater</button>
+          <button class="flow-tab" data-stream="packaging" role="tab" aria-selected="false">Packaging</button>
+          <button class="flow-tab" data-stream="other" role="tab" aria-selected="false">Other Materials</button>
+        </div>
+
+        <div class="flow-stage">
+          <svg class="flow-svg" viewBox="0 0 900 420" role="img" aria-labelledby="flowTitle flowDesc">
+            <title id="flowTitle">Interactive waste-flow map</title>
+            <desc id="flowDesc">A schematic showing how selected waste streams move through collection, sorting, processing, storage, and recovery stages.</desc>
+            <defs>
+              <linearGradient id="flowGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ffb020" />
+                <stop offset="100%" stop-color="#3dff9e" />
+              </linearGradient>
+            </defs>
+
+            <g class="flow-nodes">
+              <g class="node" transform="translate(40,170)">
+                <rect width="150" height="80" rx="6"></rect>
+                <text x="75" y="34">COLLECTION</text>
+                <text x="75" y="56" class="node-sub">Cabin interfaces</text>
+              </g>
+              <g class="node" transform="translate(250,170)">
+                <rect width="150" height="80" rx="6"></rect>
+                <text x="75" y="34">SORTING</text>
+                <text x="75" y="56" class="node-sub">Category routing</text>
+              </g>
+              <g class="node" transform="translate(460,170)">
+                <rect width="150" height="80" rx="6"></rect>
+                <text x="75" y="34">PROCESSING</text>
+                <text x="75" y="56" class="node-sub">Treat / compact</text>
+              </g>
+              <g class="node" transform="translate(670,80)">
+                <rect width="190" height="80" rx="6"></rect>
+                <text x="95" y="34">RECOVERY</text>
+                <text x="95" y="56" class="node-sub">Water / materials</text>
+              </g>
+              <g class="node" transform="translate(670,260)">
+                <rect width="190" height="80" rx="6"></rect>
+                <text x="95" y="34">STORAGE / DISPOSAL</text>
+                <text x="95" y="56" class="node-sub">Contained output</text>
+              </g>
+            </g>
+
+            <g class="flow-paths">
+              <path class="flow-path" id="pathA" d="M190 210 H250" />
+              <path class="flow-path" id="pathB" d="M400 210 H460" />
+              <path class="flow-path" id="pathC" d="M610 195 C650 175 650 140 670 130" />
+              <path class="flow-path" id="pathD" d="M610 225 C650 245 650 285 670 295" />
+              <path class="flow-path flow-return" d="M765 160 C765 120 520 90 300 145" />
+            </g>
+
+            <g class="flow-particles" aria-hidden="true">
+              <circle class="particle" r="5"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#pathA"/></animateMotion></circle>
+              <circle class="particle" r="5"><animateMotion dur="3.6s" begin="0.6s" repeatCount="indefinite"><mpath href="#pathB"/></animateMotion></circle>
+              <circle class="particle" r="5"><animateMotion dur="3.2s" begin="1.1s" repeatCount="indefinite"><mpath href="#pathC"/></animateMotion></circle>
+              <circle class="particle" r="5"><animateMotion dur="3.8s" begin="1.5s" repeatCount="indefinite"><mpath href="#pathD"/></animateMotion></circle>
+            </g>
+          </svg>
+
+          <div id="streamInfo" class="stream-info" role="tabpanel" aria-live="polite">
+            <!-- Filled by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="panel dashboard-panel" data-stage="dashboard">
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">OPERATIONS</span>
+          <h2>Recovery Dashboard</h2>
+          <p class="zone-status"><span class="lamp amber"></span> Simulated values only</p>
+        </div>
+
+        <p class="disclaimer">
+          <strong>Simulation notice:</strong> These readings are illustrative examples for this website.
+          They are not real spacecraft telemetry and should not be used for operational decisions.
+        </p>
+
+        <div class="dash-grid">
+          <article class="gauge-card">
+            <h3>Waste Volume</h3>
+            <div class="gauge" data-gauge="68" data-unit="%">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="gauge-track" cx="60" cy="60" r="50"></circle>
+                <circle class="gauge-fill" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <span class="gauge-value">0%</span>
+            </div>
+            <p>Compacted dry-waste container fill level</p>
+          </article>
+
+          <article class="gauge-card">
+            <h3>Water Recovery</h3>
+            <div class="gauge" data-gauge="94" data-unit="%">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="gauge-track" cx="60" cy="60" r="50"></circle>
+                <circle class="gauge-fill" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <span class="gauge-value">0%</span>
+            </div>
+            <p>Illustrative wastewater-recovery rate</p>
+          </article>
+
+          <article class="gauge-card">
+            <h3>Storage Capacity</h3>
+            <div class="gauge" data-gauge="41" data-unit="%">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="gauge-track" cx="60" cy="60" r="50"></circle>
+                <circle class="gauge-fill" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <span class="gauge-value">0%</span>
+            </div>
+            <p>Available contained-waste stowage</p>
+          </article>
+
+          <article class="status-card">
+            <h3>Processing Status</h3>
+            <ul class="status-list">
+              <li><span class="lamp green"></span> Condensate collection: <strong>Active</strong></li>
+              <li><span class="lamp green"></span> Urine processing: <strong>Active</strong></li>
+              <li><span class="lamp amber"></span> Compactor: <strong>Cycle scheduled</strong></li>
+              <li><span class="lamp green"></span> Air filtration: <strong>Nominal</strong></li>
+              <li><span class="lamp red"></span> Brine tank: <strong>Maintenance due</strong></li>
+            </ul>
+          </article>
+
+          <article class="alert-card">
+            <h3>System Alerts</h3>
+            <ul class="alert-list">
+              <li><span class="lamp amber"></span> Simulated filter differential pressure trending upward.</li>
+              <li><span class="lamp red"></span> Simulated storage bay 2 requires crew inspection.</li>
+              <li><span class="lamp green"></span> No simulated cabin-air-quality alarm.</li>
+            </ul>
+            <button id="refreshDashboard" class="ghost-btn" type="button">Run new simulation</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crew routines -->
+    <section id="operations" class="panel" data-stage="operations">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">CREW OPS</span>
+          <h2>Routines & Safety</h2>
+          <p class="zone-status"><span class="lamp green"></span> Procedures available</p>
+        </div>
+
+        <div class="grid three">
+          <article class="card">
+            <h3>Daily routines</h3>
+            <ul>
+              <li>Place dry trash in designated sealed bags.</li>
+              <li>Keep liquids and hygiene waste in proper collection systems.</li>
+              <li>Label and log unusual or hazardous items.</li>
+              <li>Clean contact surfaces and food-preparation areas.</li>
+              <li>Report leaks, odors, blocked filters, or damaged containers.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Odor and contamination</h3>
+            <p>
+              In a sealed habitat, small sources of odor or microbial growth can become noticeable quickly.
+              Ventilation, filtration, sealed waste bags, regular cleaning, and prompt handling of wet
+              waste help maintain a healthy cabin.
+            </p>
+            <p>
+              Contamination prevention also means keeping wastewater, food residue, cleaning chemicals,
+              and maintenance debris separated whenever possible.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Emergencies</h3>
+            <ul>
+              <li><strong>Leak:</strong> Contain liquid, protect electrical equipment, notify the crew.</li>
+              <li><strong>Fire or smoke:</strong> Follow the vehicle’s fire-response procedure first.</li>
+              <li><strong>Chemical spill:</strong> Isolate the area and use approved cleanup materials.</li>
+              <li><strong>Blocked system:</strong> Stop the affected process and follow maintenance steps.</li>
+              <li><strong>Loss of containment:</strong> Prioritize air quality, hygiene, and safe access.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Earth orbit vs deep space -->
+    <section id="environments" class="panel" data-stage="environments">
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">DESIGN</span>
+          <h2>Earth Orbit vs. Deep Space</h2>
+          <p class="zone-status"><span class="lamp amber"></span> Mission architecture</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>How waste handling changes with mission destination</caption>
+            <thead>
+              <tr>
+                <th scope="col">Factor</th>
+                <th scope="col">Earth-orbit spacecraft</th>
+                <th scope="col">Moon / Mars habitats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Resupply</th>
+                <td>Cargo vehicles can bring supplies and take packed trash away or dispose of it during reentry.</td>
+                <td>Resupply is slow, expensive, or unavailable; habitats must retain and reuse more material.</td>
+              </tr>
+              <tr>
+                <th scope="row">Water</th>
+                <td>The ISS already recovers most water from wastewater and humidity condensate.</td>
+                <td>Recovery becomes even more critical, especially where local water extraction is difficult.</td>
+              </tr>
+              <tr>
+                <th scope="row">Trash</th>
+                <td>Trash is commonly compacted, stored, and transferred to visiting cargo vehicles.</td>
+                <td>Trash may need stabilization, volume reduction, and conversion into useful materials.</td>
+              </tr>
+              <tr>
+                <th scope="row">Maintenance</th>
+                <td>Replacement parts and expertise may be available through frequent missions.</td>
+                <td>Crews need robust equipment, spare parts, repair capability, and simpler servicing.</td>
+              </tr>
+              <tr>
+                <th scope="row">Safety</th>
+                <td>Systems are designed around microgravity containment and rapid Earth-return options.</td>
+                <td>Dust, radiation, partial gravity, communication delays, and limited evacuation options add constraints.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future -->
+    <section id="future" class="panel future-panel" data-stage="future">
+      <div class="panel-inner">
+        <div class="section-marker">
+          <span class="zone-code">R&D BAY</span>
+          <h2>Future Concepts</h2>
+          <p class="zone-status"><span class="lamp amber"></span> Research direction</p>
+        </div>
+
+        <div class="grid three">
+          <article class="card concept-card">
+            <span class="concept-tag">CONCEPT</span>
+            <h3>Waste into shielding</h3>
+            <p>
+              Compacted or processed trash could potentially become radiation-shielding material. NASA’s
+              Trash Compaction and Processing System project estimates that a one-year, four-person mission
+              could produce more than 900 kg of shielding tiles and recover water from trash, but this is a
+              technology projection rather than an established operational capability. [2][4]
+            </p>
+          </article>
+
+          <article class="card concept-card">
+            <span class="concept-tag">CONCEPT</span>
+            <h3>Waste into feedstock</h3>
+            <p>
+              Thermochemical processing could break down mixed waste into gases, oils, char, or chemical
+              feedstocks. These outputs might someday support manufacturing, but they require careful
+              control of temperature, pressure, contaminants, and byproducts.
+            </p>
+          </article>
+
+          <article class="card concept-card">
+            <span class="concept-tag">CONCEPT</span>
+            <h3>Biological treatment</h3>
+            <p>
+              Future habitats may use biological systems alongside physical and chemical treatment to manage
+              hygiene water and other wastewater. NASA’s Alternate Water Processor is an example of an
+              integrated biological and physicochemical approach designed for exploration missions. [11]
+            </p>
+          </article>
+        </div>
+
+        <p class="closing-note">
+          The best space-waste system is not a single magical recycler. It is a chain of careful choices:
+          generate less waste, capture valuable resources, contain hazards, maintain equipment, and design
+          materials for reuse from the beginning.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>ORBITAL RECOVERY DECK</strong> — An educational, fictional facility interface.</p>
+    <p>Dashboard values are simulated. Content is simplified for learning and does not represent live spacecraft data.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
